@@ -102,7 +102,7 @@ def ai(request):
             'content-type': 'application/json'
         },
         json={
-            'prompt': f'you：{message}\nAI：',
+            'prompt': f'you：你好\nAI：',
             'max_tokens': 400,
             'model': 'text-davinci-003'
         },
