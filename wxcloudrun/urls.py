@@ -24,5 +24,5 @@ urlpatterns = (
     # url(r'^ai(/)?$', views.ai),
     path('ai/', views.ai, name='ai'),
     # 获取主页
-    url(r'(/)?$', views.index),
+    # url(r'(/)?$', views.index),
 )
