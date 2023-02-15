@@ -89,3 +89,24 @@ def update_count(request):
     else:
         return JsonResponse({'code': -1, 'errorMsg': 'action参数错误'},
                     json_dumps_params={'ensure_ascii': False})
+
+def ai(request,_):
+    import requests
+    a= requests.post(
+        url='https://api.openai.com/v1/completions',
+        headers={
+            'Authorization': 'Bearer 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',
+            'Content-Type': 'application/json',
+            'content-type': 'application/json'
+        },
+        data={
+            'prompt': 'you：${ctx.args.messege}\nAI：',
+            'max_tokens': 400,
+            'model': 'text-davinci-003'
+        }
+    )
+    return a
+
+
+
+
