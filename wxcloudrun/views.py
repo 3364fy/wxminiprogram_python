@@ -35,7 +35,7 @@ def counter(request, _):
         rsp = JsonResponse({'code': -1, 'errorMsg': '请求方式错误'},
                             json_dumps_params={'ensure_ascii': False})
     logger.info('response result: {}'.format(rsp.content.decode('utf-8')))
-    return {'rsp':rsp}
+    return rsp
 
 
 def get_count():
