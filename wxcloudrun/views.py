@@ -103,9 +103,10 @@ def ai(request,_):
             'prompt': 'you：${ctx.args.messege}\nAI：',
             'max_tokens': 400,
             'model': 'text-davinci-003'
-        }
+        },
+        timeout=30000
     )
-    return a
+    return JsonResponse(a)
 
 
 
