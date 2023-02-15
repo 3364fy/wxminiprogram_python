@@ -93,6 +93,7 @@ def update_count(request):
 
 def ai(request):
     import requests
+    message = request.POST.get('message')
     a= requests.post(
         url='https://api.openai.com/v1/completions',
         headers={
@@ -101,7 +102,7 @@ def ai(request):
             'content-type': 'application/json'
         },
         json={
-            'prompt': f'you：{request.body["messege"]}\nAI：',
+            'prompt': f'you：{message}\nAI：',
             'max_tokens': 400,
             'model': 'text-davinci-003'
         },
