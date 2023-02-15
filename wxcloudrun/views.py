@@ -4,6 +4,7 @@ import logging
 from django.http import JsonResponse
 from django.shortcuts import render
 from wxcloudrun.models import Counters
+from django.http.response import HttpResponse
 
 
 logger = logging.getLogger('log')
@@ -90,7 +91,7 @@ def update_count(request):
         return JsonResponse({'code': -1, 'errorMsg': 'action参数错误'},
                     json_dumps_params={'ensure_ascii': False})
 
-def ai(request,_):
+def ai(request):
     import requests
     a= requests.post(
         url='https://api.openai.com/v1/completions',
@@ -99,14 +100,15 @@ def ai(request,_):
             'Content-Type': 'application/json',
             'content-type': 'application/json'
         },
-        data={
-            'prompt': 'you：${ctx.args.messege}\nAI：',
+        json={
+            'prompt': f'you：{request.body["messege"]}\nAI：',
             'max_tokens': 400,
             'model': 'text-davinci-003'
         },
         timeout=30000
-    )
-    return JsonResponse(a)
+    ).text
+    b = json.loads(a)['choices'][0]['text']
+    return HttpResponse(json.dumps(b),content_type='application/json')
 
 
 
