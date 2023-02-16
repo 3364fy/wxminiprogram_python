@@ -91,7 +91,7 @@ def update_count(request):
         return JsonResponse({'code': -1, 'errorMsg': 'action参数错误'},
                     json_dumps_params={'ensure_ascii': False})
 
-def ai(request):
+def ai(request,_):
     import requests
     print('=======================')
     message = request.POST.get('message')
