@@ -93,7 +93,9 @@ def update_count(request):
 
 def ai(request):
     import requests
+    print('=======================')
     message = request.POST.get('message')
+    print(message)
     a= requests.post(
         url='https://api.openai.com/v1/completions',
         headers={
@@ -109,6 +111,7 @@ def ai(request):
         timeout=30000
     ).text
     b = json.loads(a)['choices'][0]['text']
+    print(b)
     return HttpResponse(json.dumps(b),content_type='application/json')
 
 
