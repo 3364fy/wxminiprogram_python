@@ -6,7 +6,7 @@ from django.shortcuts import render
 from wxcloudrun.models import Counters
 from django.http.response import HttpResponse
 
-
+import requests
 logger = logging.getLogger('log')
 
 
@@ -92,14 +92,15 @@ def update_count(request):
                     json_dumps_params={'ensure_ascii': False})
 
 def ai(request,_):
-    import requests
+
     print('=======================')
     message = request.POST.get('message')
-    print(message)
+    openaikey=request.POST.get('openaikey')
+    print(message,openaikey)
     a= requests.post(
         url='https://api.openai.com/v1/completions',
         headers={
-            'Authorization': 'Bearer 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',
+            'Authorization': f'Bearer {openaikey}',
             'Content-Type': 'application/json',
             'content-type': 'application/json'
         },
