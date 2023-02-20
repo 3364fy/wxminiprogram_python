@@ -94,8 +94,8 @@ def update_count(request):
 def ai(request):
 
     print('访问到了')
-    message = request.POST.get('message')
-    openaikey=request.POST.get('openaikey')
+    message = request.GET.get('message')
+    openaikey=request.GET.get('openaikey')
     print(message,openaikey)
     a= requests.post(
         url='https://api.openai.com/v1/completions',
