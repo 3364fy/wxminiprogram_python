@@ -91,9 +91,9 @@ def update_count(request):
         return JsonResponse({'code': -1, 'errorMsg': 'action参数错误'},
                     json_dumps_params={'ensure_ascii': False})
 
-def ai(request,_):
+def ai(request):
 
-    print('=======================')
+    print('访问到了')
     message = request.POST.get('message')
     openaikey=request.POST.get('openaikey')
     print(message,openaikey)
@@ -114,6 +114,9 @@ def ai(request,_):
     b = json.loads(a)['choices'][0]['text']
     print(b)
     return HttpResponse(json.dumps(b),content_type='application/json')
+
+def ll():
+    return HttpResponse(json.dumps({"dd":"kk"}), content_type='application/json')
 
 
 

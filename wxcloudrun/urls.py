@@ -23,6 +23,7 @@ urlpatterns = (
     url(r'^^api/count(/)?$', views.counter),
     # url(r'^ai(/)?$', views.ai),
     path('ai/', views.ai, name='ai'),
+    path('ll',views.ll)
     # 获取主页
     # url(r'(/)?$', views.index),
 )
