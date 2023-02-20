@@ -115,7 +115,7 @@ def ai(request):
     ).text
     # b = json.loads(a)['choices'][0]['text']
     #b = json.loads(a)['choices'][0]['text']
-    b = json.loads(a)
+    b = json.loads(a)['choices'][0]['text']
     print(b['choices'][0]['text'])
     return HttpResponse(json.dumps(b),content_type='application/json')
 
