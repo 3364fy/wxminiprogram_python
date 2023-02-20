@@ -69,7 +69,7 @@
     createApp({
         data() {
             return {
-                api: '',
+                api: '{{ api }}',
                 msgLoad: false,
                 anData: {},
                 sentext: '发送',
@@ -121,9 +121,6 @@
             },
 
 
-        },
-        mounted(){
-            this.api=('{{ api|escapejs}}')
         }
     }).mount('#app')
 </script>
