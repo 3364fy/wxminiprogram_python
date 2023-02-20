@@ -111,11 +111,14 @@ def ai(request):
         },
         timeout=30000
     ).text
-    b = json.loads(a)['choices'][0]['text']
+    # b = json.loads(a)['choices'][0]['text']
+    #b = json.loads(a)['choices'][0]['text']
+    b = json.loads(a)
     print(b)
     return HttpResponse(json.dumps(b),content_type='application/json')
 
-def ll():
+def ll(request):
+    print('ll')
     return HttpResponse(json.dumps({"dd":"kk"}), content_type='application/json')
 
 
