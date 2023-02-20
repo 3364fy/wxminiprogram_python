@@ -1,7 +1,7 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
-<div id="app" style="display: flex;flex-flow: column;margin: 20rpx ">
+<meta charset="utf-8" />
+<div id="app" style="display: flex;flex-flow: column;margin: 20rpx " >
     <scroll-view scroll-with-animation scroll-y="true" style="width: 100%;">
         <!-- 用来获取消息体高度 -->
         <view id="okk" scroll-with-animation>
@@ -123,7 +123,7 @@
 
         },
         created(){
-            this.api=JSON.parse('{{ api|escapejs }}')
+            this.api=('{{ api|escapejs}}')
         }
     }).mount('#app')
 </script>
