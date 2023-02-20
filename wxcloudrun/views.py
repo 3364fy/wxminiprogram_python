@@ -123,6 +123,10 @@ def ll(request):
     print('ll')
     return HttpResponse(json.dumps({"dd":"kk"}), content_type='application/json')
 
+def chat(request):
+    context={"api":request.GET.get('openaikey')}
+    return render(request, '1.html',context)
+
 
 
 
