@@ -94,8 +94,10 @@ def update_count(request):
 def ai(request):
 
     print('访问到了')
-    message = request.GET.get('message')
-    openaikey=request.GET.get('openaikey')
+    # message = request.GET.get('message')
+    # openaikey=request.GET.get('openaikey')
+    message = request.POST.get('message')
+    openaikey = request.POST.get('openaikey')
     print(message,openaikey)
     a= requests.post(
         url='https://api.openai.com/v1/completions',
@@ -114,7 +116,7 @@ def ai(request):
     # b = json.loads(a)['choices'][0]['text']
     #b = json.loads(a)['choices'][0]['text']
     b = json.loads(a)
-    print(b)
+    print(b['choices'][0]['text'])
     return HttpResponse(json.dumps(b),content_type='application/json')
 
 def ll(request):
