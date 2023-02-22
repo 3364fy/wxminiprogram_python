@@ -22,7 +22,7 @@ urlpatterns = (
     # 计数器接口
     url(r'^^api/count(/)?$', views.counter),
     # url(r'^ai(/)?$', views.ai),
-    path('ai/', views.ai, name='ai'),
+    path('ai', views.ai, name='ai'),
     path('ll',views.ll),
     path('chat',views.chat),
     path('',views.index)

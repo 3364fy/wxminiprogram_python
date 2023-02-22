@@ -10,7 +10,7 @@ import requests
 logger = logging.getLogger('log')
 
 
-def index(request,):
+def index(request):
     """
     获取主页
 
@@ -125,7 +125,7 @@ def ll(request):
 
 def chat(request):
     context={"api":request.GET.get('openaikey')}
-    return render(request, '1.html',context)
+    return render(request, 'chat.html',context)
 
 
 
