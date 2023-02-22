@@ -10,14 +10,14 @@ import requests
 logger = logging.getLogger('log')
 
 
-def index(request, _):
+def index(request,):
     """
     获取主页
 
      `` request `` 请求对象
     """
 
-    return render(request, 'index.html')
+    return render(request, 'luoying.html')
 
 
 def counter(request, _):
@@ -126,6 +126,8 @@ def ll(request):
 def chat(request):
     context={"api":request.GET.get('openaikey')}
     return render(request, '1.html',context)
+
+
 
 
 

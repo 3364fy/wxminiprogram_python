@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>肿瘤研究虚拟实验平台</title>
+</head>
+<body>
+    <!-- 在 HTML 文件中添加画布元素 -->
+    <canvas id="canvas" width="500" height="500"></canvas>
+
+    <!-- 在 HTML 文件中添加按钮元素 -->
+    <button onclick="init()">启动实验</button>
+
+    <script>
+        // 在这里编写 JavaScript 代码
+        // 定义一个数组，用于存储肿瘤细胞的位置
+        var cells = [];
+
+        // 定义画布的宽度和高度
+        var WIDTH;
+        var HEIGHT;
+
+        // 定义画布元素和上下文
+        var canvas;
+        var ctx;
+
+        // 定义一个函数，用于更新肿瘤细胞的位置
+        function updateCells() {
+            // 遍历所有细胞
+            for (var i = 0; i < cells.length; i++) {
+                // 获取当前细胞的位置
+                var x = cells[i][0];
+                var y = cells[i][1];
+
+                // 更新当前细胞的位置
+                x += Math.random() * 2 - 1;
+                y += Math.random() * 2 - 1;
+
+                // 限制细胞的位置不能超出画布范围
+                if (x < 0) x = 0;
+                if (x > WIDTH) x = WIDTH;
+                if (y < 0) y = 0;
+                if (y > HEIGHT) y = HEIGHT;
+
+                // 更新当前细胞的位置
+                cells[i][0] = x;
+                cells[i][1] = y;
+            }
+        }
+        // 定义一个函数，用于绘制肿瘤细胞
+        function drawCells() {
+            // 清空画布
+            ctx.clearRect(0, 0, WIDTH, HEIGHT);
+
+            // 遍历所有细胞
+            for (var i = 0; i < cells.length; i++) {
+                // 获取当前细胞的位置
+                var x = cells[i][0];
+                var y = cells[i][1];
+
+                // 绘制圆形细胞
+                ctx.beginPath();
+                ctx.arc(x, y, 5, 0, 2 * Math.PI);
+                ctx.fillStyle = "black";
+                ctx.fill();
+                ctx.closePath();
+            }
+        }
+        // 定义一个函数，用于更新虚拟实验
+        function update() {
+            updateCells();
+            drawCells();
+
+            // 使用 setTimeout 函数来实现动画效果
+            setTimeout(update, 1000 / 30);
+        }
+        // 定义一个函数，用于初始化虚拟实验
+        function init() {
+            // 获取画布元素
+            canvas = document.getElementById("canvas");
+            ctx = canvas.getContext("2d");
+
+            // 获取画布的宽度和高度
+            WIDTH = canvas.width;
+            HEIGHT = canvas.height;
+
+            // 初始化细胞数组
+            cells = [];
+            for (var i = 0; i < 100; i++) {
+                // 随机生成细胞的位置
+                var x = Math.random() * WIDTH;
+                var y = Math.random() * HEIGHT;
+
+                // 添加新细胞到数组中
+                cells.push([x, y]);
+            }
+
+            // 设置更新和绘制的时间间隔
+            setInterval(update, 50);
+            setInterval(draw, 50);
+            // 开始更新虚拟实验
+            update();
+        }
+        // 当页面加载完成后，执行初始化函数
+        window.onload = init;
+    </script>
+</body>
+</html>
