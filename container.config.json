@@ -1,8 +1,5 @@
 {
-	// 本配置文件仅配合模板部署使用，为模板部署的服务生成「服务设置」的初始值。
-	// 模板部署结束后，后续服务发布与本配置文件完全无关，修改「服务设置」请到控制台操作。
-	// 复制模板代码自行开发请忽略本配置文件。
-	
+	"buildDir": "",
 	"containerPort": 80,                           
 	"minNum": 0,                                  
 	"maxNum": 5,                                  
@@ -20,7 +17,12 @@
 			"PolicyThreshold": 60
 		}
 	],
-	"envParams": {},                               
+	"dockerfilePath": "Dockerfile",
+	"envParams": {
+      "MYSQL_ADDRESS":"10.10.110.178:3306",
+	  "MYSQL_USERNAME":"root",
+      "MYSQL_PASSWORD":"FYYSJCHJ3364fy"
+	},                               
 	"customLogs": "stdout",                         
 	"initialDelaySeconds": 2,                       
 	"dataBaseName":"django_demo",

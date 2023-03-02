@@ -1,19 +1,52 @@
 <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>完美世界</title>
 </head>
+<style>
+
+    .firm{
+        text-align: center;
+        border:1px solid coral;
+        padding: 30px;border-radius: 30px;
+        background-color: aquamarine;
+        box-shadow: 10px 10px 10px blanchedalmond;
+        margin: 10px;
+    }
+    .bar{
+        border: aqua solid 5px;
+        box-shadow: blanchedalmond 10px 10px 10px;
+        border-radius: 10px;
+        padding: 10px;
+        margin: 10px;
+        box-sizing: border-box;
+    }
+    .center{
+        display: flex;
+        align-items: center;
+        text-align: center;
+        justify-content: center;
+    }
+
+
+</style>
 <div id="app" style="width: 100vw">
-    <div style="
-    text-align: center;
-    border:1px solid coral;
-    padding: 30px;border-radius: 30px;
-    background-color: aquamarine;
-    box-shadow: 10px 10px 10px blanchedalmond;
-    margin: 10px;">
+    <div  class="firm">
         一粒尘可填沧海，一株草斩尽日月星辰
     </div>
 </div>
+
+<div  @click="chat" style="display: flex;justify-content: space-evenly" >
+    <a class="bar" href="chat">聊天机器人</a>
+    <a class="bar" href="chatgpt">chatGPT</a>
+    <a class="bar" href="virtual">虚拟实验</a>
+    <a class="bar" href="3d">3D场景</a>
+    <a class="bar" href="ll">json</a>
+</div>
+<div >
+    <h1 class="center  ">欢迎光临</h1>
+</div>
+
 
 <script>
     const { createApp } = Vue
@@ -24,6 +57,9 @@
             }
         },
         methods: {
+            chat(e){
+                console.log('成功')
+            }
         }
     }).mount('#app')
 </script>

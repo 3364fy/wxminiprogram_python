@@ -127,6 +127,18 @@ def chat(request):
     context={"api":request.GET.get('openaikey')}
     return render(request, 'chat.html',context)
 
+def chatgpt(request):
+    context={"api":request.GET.get('openaikey')}
+    return render(request, 'chatgpt.html',context)
+
+def virtual(request):
+    return render(request,"virtual.html")
+
+
+def _3d(request):
+    return render(request,"3d.html")
+
+
 
 
 

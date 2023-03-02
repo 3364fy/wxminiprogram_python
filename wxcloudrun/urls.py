@@ -25,7 +25,10 @@ urlpatterns = (
     path('ai', views.ai, name='ai'),
     path('ll',views.ll),
     path('chat',views.chat),
-    path('',views.index)
+    path('virtual',views.virtual),
+    path('3d',views._3d),
+    path('',views.index),
+    path('chatgpt',views.chatgpt)
     # 获取主页
     # url(r'(/)?$', views.index),
 )

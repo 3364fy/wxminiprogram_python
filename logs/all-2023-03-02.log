@@ -1,0 +1,110 @@
+[2023-03-02 09:38:49,894] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-03-02 09:46:48,105] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-03-02 09:58:01,551] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-03-02 10:04:29,737] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-03-02 10:04:37,880] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 1441
+[2023-03-02 10:04:43,101] [log.py:224] [log:log_response] [WARNING]- Not Found: /favicon.ico
+[2023-03-02 10:04:43,114] [basehttp.py:161] [basehttp:log_message] [WARNING]- "GET /favicon.ico HTTP/1.1" 404 2753
+[2023-03-02 10:04:43,358] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat HTTP/1.1" 200 4704
+[2023-03-02 10:05:22,978] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat?openaikey=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 HTTP/1.1" 200 4751
+[2023-03-02 10:06:58,718] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 1441
+[2023-03-02 10:08:10,688] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 1441
+[2023-03-02 10:09:30,641] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 1441
+[2023-03-02 10:11:00,738] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-03-02 10:11:07,268] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 1441
+[2023-03-02 10:11:09,916] [log.py:224] [log:log_response] [WARNING]- Not Found: /favicon.ico
+[2023-03-02 10:11:09,953] [basehttp.py:161] [basehttp:log_message] [WARNING]- "GET /favicon.ico HTTP/1.1" 404 2753
+[2023-03-02 10:11:11,045] [log.py:224] [log:log_response] [ERROR]- Internal Server Error: /chat
+Traceback (most recent call last):
+  File "/root/.local/lib/python3.8/site-packages/django/core/handlers/exception.py", line 47, in inner
+    response = get_response(request)
+  File "/root/.local/lib/python3.8/site-packages/django/core/handlers/base.py", line 181, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/app/wxcloudrun/views.py", line 128, in chat
+    return render(request, 'chat.html',context)
+  File "/root/.local/lib/python3.8/site-packages/django/shortcuts.py", line 19, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/root/.local/lib/python3.8/site-packages/django/template/loader.py", line 61, in render_to_string
+    template = get_template(template_name, using=using)
+  File "/root/.local/lib/python3.8/site-packages/django/template/loader.py", line 15, in get_template
+    return engine.get_template(template_name)
+  File "/root/.local/lib/python3.8/site-packages/django/template/backends/django.py", line 34, in get_template
+    return Template(self.engine.get_template(template_name), self)
+  File "/root/.local/lib/python3.8/site-packages/django/template/engine.py", line 143, in get_template
+    template, origin = self.find_template(template_name)
+  File "/root/.local/lib/python3.8/site-packages/django/template/engine.py", line 125, in find_template
+    template = loader.get_template(name, skip=skip)
+  File "/root/.local/lib/python3.8/site-packages/django/template/loaders/base.py", line 29, in get_template
+    return Template(
+  File "/root/.local/lib/python3.8/site-packages/django/template/base.py", line 155, in __init__
+    self.nodelist = self.compile_nodelist()
+  File "/root/.local/lib/python3.8/site-packages/django/template/base.py", line 193, in compile_nodelist
+    return parser.parse()
+  File "/root/.local/lib/python3.8/site-packages/django/template/base.py", line 449, in parse
+    raise self.error(token, e)
+  File "/root/.local/lib/python3.8/site-packages/django/template/base.py", line 447, in parse
+    filter_expression = self.compile_filter(token.contents)
+  File "/root/.local/lib/python3.8/site-packages/django/template/base.py", line 563, in compile_filter
+    return FilterExpression(token, self)
+  File "/root/.local/lib/python3.8/site-packages/django/template/base.py", line 662, in __init__
+    raise TemplateSyntaxError("Could not parse the remainder: '%s' "
+django.template.exceptions.TemplateSyntaxError: Could not parse the remainder: '-buWkb9ZSFHQ19e3puJDhT3BlbkFJDKFKI8qx24tv7B7Kxp8e' from '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'
+[2023-03-02 10:11:11,099] [basehttp.py:161] [basehttp:log_message] [ERROR]- "GET /chat HTTP/1.1" 500 135057
+[2023-03-02 10:11:25,021] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat HTTP/1.1" 200 4704
+[2023-03-02 10:11:42,613] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat?openaikey=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 HTTP/1.1" 200 4751
+[2023-03-02 10:23:50,265] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 1441
+[2023-03-02 10:23:54,279] [log.py:224] [log:log_response] [WARNING]- Not Found: /favicon.ico
+[2023-03-02 10:23:54,288] [basehttp.py:161] [basehttp:log_message] [WARNING]- "GET /favicon.ico HTTP/1.1" 404 2753
+[2023-03-02 10:23:54,686] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat HTTP/1.1" 200 4720
+[2023-03-02 10:24:39,715] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat?openaikey=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 HTTP/1.1" 200 4767
+[2023-03-02 10:56:44,189] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 1441
+[2023-03-02 10:56:47,404] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat?openaikey=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 HTTP/1.1" 200 4778
+[2023-03-02 10:56:53,711] [log.py:224] [log:log_response] [WARNING]- Not Found: /favicon.ico
+[2023-03-02 10:56:53,718] [basehttp.py:161] [basehttp:log_message] [WARNING]- "GET /favicon.ico HTTP/1.1" 404 2753
+[2023-03-02 10:58:04,792] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat?openaikey=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 HTTP/1.1" 200 4778
+[2023-03-02 10:59:13,801] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat?openaikey=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 HTTP/1.1" 200 4737
+[2023-03-02 11:00:47,411] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat?openaikey=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 HTTP/1.1" 200 4657
+[2023-03-02 11:07:07,607] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat?openaikey=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 HTTP/1.1" 200 4572
+[2023-03-02 11:08:12,175] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 1441
+[2023-03-02 11:08:17,804] [log.py:224] [log:log_response] [WARNING]- Not Found: /favicon.ico
+[2023-03-02 11:08:17,808] [basehttp.py:161] [basehttp:log_message] [WARNING]- "GET /favicon.ico HTTP/1.1" 404 2753
+[2023-03-02 11:08:18,636] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat HTTP/1.1" 200 4525
+[2023-03-02 11:10:41,476] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat?openaikey=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 HTTP/1.1" 200 4572
+[2023-03-02 11:14:11,133] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat?openaikey=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 HTTP/1.1" 200 4572
+[2023-03-02 11:22:08,789] [autoreload.py:251] [autoreload:trigger_reload] [INFO]- /app/wxcloudrun/urls.py changed, reloading.
+[2023-03-02 11:22:14,677] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-03-02 11:22:28,938] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-03-02 11:23:10,292] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat HTTP/1.1" 200 4525
+[2023-03-02 11:23:17,131] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 1480
+[2023-03-02 11:23:20,173] [log.py:224] [log:log_response] [WARNING]- Not Found: /chatGPT
+[2023-03-02 11:23:20,178] [basehttp.py:161] [basehttp:log_message] [WARNING]- "GET /chatGPT HTTP/1.1" 404 2848
+[2023-03-02 11:23:54,092] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 1487
+[2023-03-02 11:23:56,509] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chatgpt HTTP/1.1" 200 4670
+[2023-03-02 11:24:24,206] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat HTTP/1.1" 200 4525
+[2023-03-02 11:25:02,714] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 1487
+[2023-03-02 11:25:06,235] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat HTTP/1.1" 200 4525
+[2023-03-02 11:25:08,806] [log.py:224] [log:log_response] [WARNING]- Not Found: /favicon.ico
+[2023-03-02 11:25:08,810] [basehttp.py:161] [basehttp:log_message] [WARNING]- "GET /favicon.ico HTTP/1.1" 404 2860
+[2023-03-02 11:25:15,903] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chatgpt HTTP/1.1" 200 4670
+[2023-03-02 11:26:36,059] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chatgpt?openaikey=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 HTTP/1.1" 200 4717
+[2023-03-02 11:27:21,753] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chatgpt?openaikey=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 HTTP/1.1" 200 4717
+[2023-03-02 11:27:52,293] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chatgpt HTTP/1.1" 200 4670
+[2023-03-02 11:27:55,508] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 1487
+[2023-03-02 11:27:59,481] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat HTTP/1.1" 200 4525
+[2023-03-02 11:28:23,982] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat HTTP/1.1" 200 4525
+[2023-03-02 11:31:37,640] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-03-02 11:33:48,921] [autoreload.py:637] [autoreload:run_with_reloader] [INFO]- Watching for file changes with StatReloader
+[2023-03-02 11:33:53,628] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET / HTTP/1.1" 200 1487
+[2023-03-02 11:33:56,887] [log.py:224] [log:log_response] [WARNING]- Not Found: /favicon.ico
+[2023-03-02 11:33:56,919] [basehttp.py:161] [basehttp:log_message] [WARNING]- "GET /favicon.ico HTTP/1.1" 404 2860
+[2023-03-02 11:34:13,702] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat HTTP/1.1" 200 4525
+[2023-03-02 11:34:25,371] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat?openaikey=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 HTTP/1.1" 200 4572
+[2023-03-02 11:35:21,638] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chatgpt?openaikey=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 HTTP/1.1" 200 4717
+[2023-03-02 11:35:23,430] [log.py:224] [log:log_response] [WARNING]- Not Found: /favicon.ico
+[2023-03-02 11:35:23,433] [basehttp.py:161] [basehttp:log_message] [WARNING]- "GET /favicon.ico HTTP/1.1" 404 2860
+[2023-03-02 11:38:11,828] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chatgpt?openaikey=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 HTTP/1.1" 200 4717
+[2023-03-02 11:38:13,443] [log.py:224] [log:log_response] [WARNING]- Not Found: /favicon.ico
+[2023-03-02 11:38:13,445] [basehttp.py:161] [basehttp:log_message] [WARNING]- "GET /favicon.ico HTTP/1.1" 404 2860
+[2023-03-02 11:39:34,023] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chatgpt?openaikey=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 HTTP/1.1" 200 4717
+[2023-03-02 11:40:23,030] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chatgpt?openaikey=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 HTTP/1.1" 200 4717
+[2023-03-02 11:41:24,682] [basehttp.py:161] [basehttp:log_message] [INFO]- "GET /chat?openaikey=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 HTTP/1.1" 200 4572

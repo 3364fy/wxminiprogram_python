@@ -84,7 +84,7 @@
                 showTow: false,
                 msgList: [{
                     my: false,
-                    msg: "你好我是openAI机器人,请问有什么问题可以帮助您?"
+                    msg: "你好我是chatGPT,请问有什么问题可以帮助您?"
                 }],
                 msgContent: "",
                 msg: ""
@@ -107,13 +107,20 @@
                 this.msgLoad = true
                 // 清除消息
                 this.msg = ""
-                axios.post('https://api.openai.com/v1/completions', {
-                    prompt: this.msgContent, max_tokens: 2048, model: "text-davinci-003"
+                axios.post('https://api.openai.com/v1/chat/completions', {
+                    messages: [
+                        {
+                            "role": "user",
+                            "content": "你是chatGPT吗？"
+                        }
+                    ],
+                    max_tokens: 2048,
+                    model: "gpt-3.5-turbo"
                 }, {
                     headers: { 'content-type': 'application/json', 'Authorization': 'Bearer ' + this.api }
                 }).then(res => {
                     console.log(res);
-                    let text = res.data.choices[0].text.replace("openai:", "").replace("openai：", "").replace(/^\n|\n$/g, "")
+                    let text = res.data.choices[0].text.message.content
                     console.log(text);
                     this.msgList.push({
                         "msg": text,
